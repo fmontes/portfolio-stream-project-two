@@ -30,7 +30,7 @@ export default function Home({ products }: Props) {
       <main>
         <ol>
         {products.map(product => {
-          return <li key={product.id}>{product.title}</li>
+          return <li key={product.id}><strong>{product.title}</strong></li>
         })}
         </ol>
       </main>

@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 
 import '@fontsource/spartan/400.css'
+import '@fontsource/spartan/700.css'
 
 const theme = extendTheme({
   fonts: {

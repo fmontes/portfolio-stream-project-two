@@ -6,6 +6,7 @@ import { TopBar } from "@/components/TopBar";
 
 import { HomeHeroCategories } from "@/components/HomeHeroCategories";
 import { Categories } from "@/models/Categories";
+import { Box, Container } from "@chakra-ui/react";
 
 type Product = {
   id: number;
@@ -37,9 +38,12 @@ export default function Home({ products, categories }: Props) {
       </Head>
       <main>
         <TopBar />
-        <Header />
-
-        <HomeHeroCategories categories={categories}></HomeHeroCategories>
+        <Box marginBottom="2rem">
+          <Header />
+        </Box>
+        <Container size="lg">
+          <HomeHeroCategories categories={categories}></HomeHeroCategories>
+        </Container>
 
         {/* <ol>
           {products.map(product => {

@@ -55,8 +55,8 @@ export default function Home({ products, categories }: Props) {
         </Container>
 
         <Box margin="2rem auto" width="255px" border="solid 1px" borderColor="gray.200">
-          <AspectRatio position="relative" ratio="1" maxWidth="100%">
-            <Image src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" fill="true" style={{ objectFit: "contain" }} />
+          <AspectRatio position="relative" ratio={1} maxWidth="100%">
+            <Image src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" fill={true} style={{ objectFit: "contain" }} />
           </AspectRatio>
           <Text>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</Text>
           <Text>$ 38.00</Text>

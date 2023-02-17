@@ -38,9 +38,11 @@ const menu = [
 
 export function Header() {
   return (<Box w="100%" as="header" borderBottom="solid 2px" borderColor="gray.100">
-    <Container as={Flex} justifyContent="space-between" alignItems="center" size="lg">
+    <Container as={Flex} justifyContent="space-between" alignItems="center" size={{
+      lg: 'lg'
+    }}>
       <Flex gap={'0.5rem'} margin="1rem 0">
-        <Show below='sm'>
+        <Show below='lg'>
           <Box as="nav">
             <Menu>
               <MenuButton
@@ -63,7 +65,7 @@ export function Header() {
         </Show>
         <Image src="/logo.svg" alt="" width={100} height={48} />
       </Flex>
-      <Show above='sm'>
+      <Show above='lg'>
         <Box as="nav">
           <Flex as="ul" listStyleType="none" gap="2rem">
             {

@@ -14,13 +14,14 @@ type Props = {
 export function HomeHeroCategories({ categories }: Props) {
   return (<Grid templateColumns={{
     base: '1fr 1fr',
-    md: '540px 255px 255px'
+    md: '2fr 1fr 1fr'
   }} templateRows={{
     base: '130px 154px 130px',
     md: '200px 260px'
   }} gap={{
     base: '0.5rem',
-    md: '30px'
+    md: '1rem',
+    lg: '2rem'
   }} templateAreas={{
     base: `
       "cat1 cat1"

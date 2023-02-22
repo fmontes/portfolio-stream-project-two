@@ -8,11 +8,13 @@ import { TopBar } from '@/components/TopBar';
 import { HomeHeroCategories } from '@/components/HomeHeroCategories';
 import { Categories } from '@/models/Categories';
 
-import { Box, Container, Grid, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import { AdvantageSection } from '@/components/AdvantageSection';
-import { ProductCard } from '@/components/ProductCard';
 import { GroupedProducts, groupProductsByCategory } from '@/utils/groupProductsByCategory';
 import { HomeProductsGrid } from '@/components/HomeProductsGrid';
+
+import bannerNewSeason from '/public/banner-new-season.jpg';
+import bannerSale from '/public/banner-sale.jpg';
 
 export type Product = {
   id: number;
@@ -81,6 +83,23 @@ export default function Home({ products, categories, productsGroupedByCategory }
               </Box>
             );
           })}
+        </Container>
+
+        <Container
+          size={{
+            lg: 'lg',
+          }}
+        >
+          <SimpleGrid
+            minChildWidth="255px"
+            spacing={{
+              base: '1rem',
+              md: '2rem',
+            }}
+          >
+            <Image src={bannerNewSeason} alt="" />
+            <Image src={bannerSale} alt="" />
+          </SimpleGrid>
         </Container>
       </main>
       x

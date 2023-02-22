@@ -8,7 +8,7 @@ import { TopBar } from '@/components/TopBar';
 import { HomeHeroCategories } from '@/components/HomeHeroCategories';
 import { Categories } from '@/models/Categories';
 
-import { Box, Container, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Grid, SimpleGrid } from '@chakra-ui/react';
 import { AdvantageSection } from '@/components/AdvantageSection';
 import { ProductCard } from '@/components/ProductCard';
 
@@ -53,14 +53,50 @@ export default function Home({ products, categories }: Props) {
         >
           <HomeHeroCategories categories={categories}></HomeHeroCategories>
           <AdvantageSection />
+        </Container>
 
-          {
-            <SimpleGrid minChildWidth="255px" spacing={'1.85rem'}>
-              {products.map((product) => {
-                return <ProductCard {...product} key={product.id} />;
-              })}
-            </SimpleGrid>
-          }
+        <Container
+          maxW={{
+            base: '100%',
+            md: '1110px',
+          }}
+          paddingX="0"
+        >
+          <Grid
+            gridTemplateColumns={{
+              base: 'repeat(auto-fit, 255px)',
+              md: 'repeat(auto-fit, minmax(255px, 1fr))',
+            }}
+            gridAutoFlow={{
+              base: 'column',
+              md: 'row',
+            }}
+            alignItems="stretch"
+            gridAutoColumns="255px"
+            gridAutoRows="1fr"
+            overflowX="scroll"
+            scrollSnapType="x mandatory"
+            scrollSnapStop="always"
+            gap={'1.85rem'}
+          >
+            {products.map((product, i) => {
+              return (
+                <Box
+                  marginLeft={{
+                    base: i === 0 ? '1rem' : '0',
+                    md: '0',
+                  }}
+                  key={product.id}
+                  scrollSnapAlign="center"
+                  border="solid 1px"
+                  borderColor={'gray.200'}
+                  padding={'1rem'}
+                >
+                  <ProductCard {...product} />
+                </Box>
+              );
+            })}
+          </Grid>
         </Container>
       </main>
     </>

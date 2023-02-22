@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export function ProductCard({ image, title, price, rating }: Product) {
   return (
-    <Box width={'100%'} border="solid 1px" borderColor={'gray.200'} padding={'1rem'}>
+    <Box width={'100%'}>
       <AspectRatio position="relative" ratio={1} maxWidth="100%" marginBottom={'1rem'}>
         <Image
           src={image}

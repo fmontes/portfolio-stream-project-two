@@ -121,7 +121,6 @@ export default function Home({ products, categories, productsGroupedByCategory }
           </SimpleGrid>
         </Container>
       </main>
-      x
     </>
   );
 }

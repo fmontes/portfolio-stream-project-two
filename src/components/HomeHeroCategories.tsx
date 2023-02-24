@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Flex, Grid, GridItem } from '@chakra-ui/react';
 
 import { slugify } from '@/utils/sluglify';
 
@@ -57,7 +57,9 @@ export function HomeHeroCategories({ categories }: Props) {
             key={index}
           >
             <Image src={imageUrl} style={{ objectFit: 'cover' }} fill={true} alt={cat} />
-            <CenteredLabel>{cat}</CenteredLabel>
+            <Flex display="flex" alignItems="center" justifyContent="center" height="100%">
+              <CenteredLabel>{cat}</CenteredLabel>
+            </Flex>
           </GridItem>
         );
       })}

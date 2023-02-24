@@ -8,13 +8,14 @@ import { TopBar } from '@/components/TopBar';
 import { HomeHeroCategories } from '@/components/HomeHeroCategories';
 import { Categories } from '@/models/Categories';
 
-import { Box, Container, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import { AdvantageSection } from '@/components/AdvantageSection';
 import { GroupedProducts, groupProductsByCategory } from '@/utils/groupProductsByCategory';
 import { HomeProductsGrid } from '@/components/HomeProductsGrid';
 
 import bannerNewSeason from '/public/banner-new-season.jpg';
 import bannerSale from '/public/banner-sale.jpg';
+import { CenteredLabel } from '@/components/CenteredLabel';
 
 export type Product = {
   id: number;
@@ -91,14 +92,42 @@ export default function Home({ products, categories, productsGroupedByCategory }
           }}
         >
           <SimpleGrid
-            minChildWidth="255px"
+            minChildWidth="320px"
             spacing={{
               base: '1rem',
               md: '2rem',
             }}
           >
-            <Image src={bannerNewSeason} alt="" />
-            <Image src={bannerSale} alt="" />
+            <Box position={'relative'}>
+              <Image src={bannerNewSeason} alt="" />
+
+              <Box position="absolute" left="50%" top="50%" transform="translate(-50%, -50%)">
+                <CenteredLabel>
+                  <Text fontSize="sm" color="gray.500">
+                    New Season
+                  </Text>
+                  <Text fontSize="lg" fontWeight="bold" whiteSpace="nowrap">
+                    lookbook collection
+                  </Text>
+                </CenteredLabel>
+              </Box>
+            </Box>
+            <Box position={'relative'}>
+              <Image src={bannerSale} alt="" />
+              <Box position="absolute" left="50%" top="50%" transform="translate(-50%, -50%)">
+                <CenteredLabel>
+                  <Text fontSize="sm" color="gray.500">
+                    Sale
+                  </Text>
+                  <Text fontSize="lg" fontWeight="bold" whiteSpace="nowrap">
+                    Get UP to{' '}
+                    <Text as="span" color="red">
+                      50% off
+                    </Text>
+                  </Text>
+                </CenteredLabel>
+              </Box>
+            </Box>
           </SimpleGrid>
         </Container>
       </main>

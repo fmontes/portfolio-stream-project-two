@@ -117,18 +117,78 @@ export default function Home({ products, categories, productsGroupedByCategory }
 
         <Container
           background={'linear-gradient(180deg, #F3F2F2 0%, #DCDBDB 100%);'}
-          m="2rem auto"
-          p="3.5556rem"
+          m={{
+            base: '14.75rem 0 0',
+            md: '2rem auto',
+          }}
+          p={{
+            base: '1.5rem',
+            md: '3.5556rem',
+          }}
           maxW="100%"
           position="relative"
         >
-          <Box position="absolute" right="50%" transform="translateX(470px)">
-            <Image src={menWalking} alt="" />
+          <Box
+            position="absolute"
+            top={{
+              base: 'calc(-236px + 1.5rem)',
+              md: 'initial',
+            }}
+            right={{
+              base: '32px',
+              md: '50%',
+            }}
+            transform={{
+              md: 'translateX(470px)',
+            }}
+            height={{
+              base: '236px',
+              md: '524px',
+            }}
+            width={{
+              base: '99px',
+              md: '219px',
+            }}
+          >
+            <Image src={menWalking} style={{ objectFit: 'cover' }} fill={true} alt="" />
           </Box>
-          <Box position="absolute" bottom="0" left="50%" transform="translateX(-530px)">
-            <Image src={womenStanding} alt="" />
+          <Box
+            position="absolute"
+            top={{
+              base: 'calc(-242px + 1.5rem)',
+              md: 'initial',
+            }}
+            bottom={{
+              md: '0',
+            }}
+            left={{
+              base: '1.5rem',
+              md: '50%',
+            }}
+            transform={{
+              md: 'translateX(-530px)',
+            }}
+            height={{
+              base: '242px',
+              md: '545px',
+            }}
+            width={{
+              base: '128px',
+              md: '311px',
+            }}
+          >
+            <Image src={womenStanding} style={{ objectFit: 'cover' }} fill={true} alt="" />
           </Box>
-          <Flex height="28.75rem" maxW="33.25rem" m="auto" as="article" bgColor="white" p="2rem">
+          <Flex
+            height={{
+              md: '28.75rem',
+            }}
+            maxW="33.25rem"
+            m="auto"
+            as="article"
+            bgColor="white"
+            p="2rem"
+          >
             <Grid gap="2rem" maxW="21.25rem" m="auto" textAlign="center">
               <header>
                 <Heading size="sm" textTransform="uppercase" color="gray">

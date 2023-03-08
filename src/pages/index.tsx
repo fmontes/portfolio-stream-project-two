@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 import { Header } from '@/components/Header';
 import { TopBar } from '@/components/TopBar';
@@ -7,15 +8,17 @@ import { TopBar } from '@/components/TopBar';
 import { HomeHeroCategories } from '@/components/HomeHeroCategories';
 import { Categories } from '@/models/Categories';
 
-import { Box, Button, Container, FormControl, Grid, Heading, Input, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Button, Container, Flex, FormControl, Grid, Heading, Input, SimpleGrid, Text } from '@chakra-ui/react';
 import { AdvantageSection } from '@/components/AdvantageSection';
 import { GroupedProducts, groupProductsByCategory } from '@/utils/groupProductsByCategory';
 import { HomeProductsGrid } from '@/components/HomeProductsGrid';
 
+import { PromoBanner } from '@/components/PromoBanner';
+
 import bannerNewSeason from '/public/banner-new-season.jpg';
 import bannerSale from '/public/banner-sale.jpg';
-import { CenteredLabel } from '@/components/CenteredLabel';
-import { PromoBanner } from '@/components/PromoBanner';
+import menWalking from '/public/men-walking.png';
+import womenStanding from '/public/woman-standing.png';
 
 export type Product = {
   id: number;
@@ -115,11 +118,18 @@ export default function Home({ products, categories, productsGroupedByCategory }
         <Container
           background={'linear-gradient(180deg, #F3F2F2 0%, #DCDBDB 100%);'}
           m="2rem auto"
-          p="1.5rem"
+          p="3.5556rem"
           maxW="100%"
+          position="relative"
         >
-          <Box maxW="33rem" m="auto" as="article" bgColor="white" p="2rem">
-            <Grid gap="2rem" maxW="22rem" m="auto" textAlign="center">
+          <Box position="absolute" right="50%" transform="translateX(470px)">
+            <Image src={menWalking} alt="" />
+          </Box>
+          <Box position="absolute" bottom="0" left="50%" transform="translateX(-530px)">
+            <Image src={womenStanding} alt="" />
+          </Box>
+          <Flex height="28.75rem" maxW="33.25rem" m="auto" as="article" bgColor="white" p="2rem">
+            <Grid gap="2rem" maxW="21.25rem" m="auto" textAlign="center">
               <header>
                 <Heading size="sm" textTransform="uppercase" color="gray">
                   Special Offer
@@ -142,12 +152,10 @@ export default function Home({ products, categories, productsGroupedByCategory }
                     backgroundColor="gray.100"
                   />
                 </FormControl>
-                <Button bgColor="black" w="100%" h="4rem" size={'lg'}>
-                  Subscribe
-                </Button>
+                <Button size={'xl'}>Subscribe</Button>
               </Grid>
             </Grid>
-          </Box>
+          </Flex>
         </Container>
       </main>
     </>

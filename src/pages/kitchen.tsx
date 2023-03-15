@@ -1,7 +1,7 @@
 import { Button, Container } from '@chakra-ui/react';
 import Head from 'next/head';
 
-export default function Kitchen({ products, categories, productsGroupedByCategory }: Props) {
+export default function Kitchen() {
   return (
     <>
       <Head>

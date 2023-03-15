@@ -38,12 +38,11 @@ export type Product = {
 };
 
 type Props = {
-  products: Product[];
   categories: Categories[];
   productsGroupedByCategory: GroupedProducts;
 };
 
-export default function Home({ products, categories, productsGroupedByCategory }: Props) {
+export default function Home({ categories, productsGroupedByCategory }: Props) {
   return (
     <>
       <Head>
@@ -170,7 +169,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   return {
     props: {
-      products,
       categories,
       productsGroupedByCategory,
     },

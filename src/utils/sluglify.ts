@@ -1,3 +1,5 @@
+import { StarIcon } from "@chakra-ui/icons"
+
 export const slugify = (...args: (string | number)[]): string => {
   const value = args.join(' ')
 

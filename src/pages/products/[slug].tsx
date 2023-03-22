@@ -43,7 +43,7 @@ export default function Product({ product }: Props) {
   return (
     <>
       <PDPHeader product={product}></PDPHeader>
-      <Container as={Grid} gridTemplateColumns={'34.88rem 1fr'} mt="2rem" gap="2rem">
+      <Container as={Grid} gridTemplateColumns={'1fr 34.25rem'} mt="2rem" gap="2rem">
         <AspectRatio position="relative" ratio={1} maxWidth="100%" marginBottom={'1rem'}>
           <Image
             src={image}

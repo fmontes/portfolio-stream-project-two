@@ -11,7 +11,7 @@ import { Categories } from '@/models/Categories';
 import { Box, Button, Container, Flex, FormControl, Grid, Heading, Input, SimpleGrid, Text } from '@chakra-ui/react';
 import { AdvantageSection } from '@/components/AdvantageSection';
 import { GroupedProducts, groupProductsByCategory } from '@/utils/groupProductsByCategory';
-import { HomeProductsGrid } from '@/components/HomeProductsGrid';
+import { ProductsGrid } from '@/components/ProductsGrid';
 
 import { PromoBanner } from '@/components/PromoBanner';
 
@@ -79,7 +79,7 @@ export default function Home({ categories, productsGroupedByCategory }: Props) {
                 >
                   {category}
                 </Heading>
-                <HomeProductsGrid products={products} />
+                <ProductsGrid products={products} />
               </Box>
             );
           })}

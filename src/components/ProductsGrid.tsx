@@ -8,7 +8,7 @@ type Props = {
   products: Product[];
 };
 
-export function HomeProductsGrid(props: Props) {
+export function ProductsGrid(props: Props) {
   return (
     <Grid
       gridTemplateColumns={{

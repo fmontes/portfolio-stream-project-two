@@ -18,7 +18,7 @@ import logo_mastercard from '/public/logo_mastercard.png';
 import logo_paypal from '/public/logo_paypal.png';
 import logo_stripe from '/public/logo_stripe.png';
 import logo_visa from '/public/logo_visa.png';
-import { HomeProductsGrid } from '@/components/HomeProductsGrid';
+import { ProductsGrid } from '@/components/ProductsGrid';
 
 type Props = {
   product: ProductModel;
@@ -115,7 +115,7 @@ export default function Product({ product, relatedProducts }: Props) {
         <Heading as="h3" textTransform={'uppercase'} fontSize="md" color="gray.500" mb="2rem">
           Related Products
         </Heading>
-        <HomeProductsGrid products={relatedProducts} />
+        <ProductsGrid products={relatedProducts} />
       </Container>
     </>
   );

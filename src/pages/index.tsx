@@ -52,7 +52,7 @@ export default function Home({ categories, productsGroupedByCategory }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Box as="main" mt="2rem">
         <Container>
           <HomeHeroCategories categories={categories}></HomeHeroCategories>
           <AdvantageSection />
@@ -153,7 +153,7 @@ export default function Home({ categories, productsGroupedByCategory }: Props) {
             />
           </SimpleGrid>
         </Container>
-      </main>
+      </Box>
     </>
   );
 }

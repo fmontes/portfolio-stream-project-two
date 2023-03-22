@@ -56,7 +56,7 @@ export function Header() {
               </Menu>
             </Box>
           </Show>
-          <Image src="/logo.svg" alt="" width={100} height={48} />
+          <Link href="/"><Image src="/logo.svg" alt="" width={100} height={48} /></Link>
         </Flex>
         <Show above="lg">
           <Box as="nav">

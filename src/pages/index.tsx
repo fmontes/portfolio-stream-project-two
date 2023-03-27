@@ -1,14 +1,10 @@
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-
-import { Header } from '@/components/Header';
-import { TopBar } from '@/components/TopBar';
 
 import { HomeHeroCategories } from '@/components/HomeHeroCategories';
 import { Categories } from '@/models/Categories';
 
-import { Box, Button, Container, Flex, FormControl, Grid, Heading, Input, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import { AdvantageSection } from '@/components/AdvantageSection';
 import { GroupedProducts, groupProductsByCategory } from '@/utils/groupProductsByCategory';
 import { ProductsGrid } from '@/components/ProductsGrid';

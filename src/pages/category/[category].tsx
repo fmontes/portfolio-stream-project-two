@@ -1,11 +1,16 @@
 import { ProductsGrid } from '@/components/ProductsGrid';
 import { Container } from '@chakra-ui/react';
 import { GetServerSideProps } from 'next';
+import { Product } from '..';
 
-export default function Category(props) {
+type Props = {
+  products: Product[];
+};
+
+export default function Category({ products }: Props) {
   return (
     <Container>
-      <ProductsGrid products={props.products} />
+      <ProductsGrid products={products} />
     </Container>
   );
 }

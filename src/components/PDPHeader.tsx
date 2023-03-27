@@ -1,9 +1,12 @@
-import { ShareIcon } from '@/icons/Share';
-import { Product } from '@/pages';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Container, Text, Box, Flex, UnorderedList, ListItem, ListIcon, Button, Heading } from '@chakra-ui/react';
 import Link from 'next/link';
+
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { Container, Text, Box, Flex, Button, Heading } from '@chakra-ui/react';
+
+import { Product } from '@/pages';
 import { Rating } from './Rating';
+import { ShareIcon } from '@/icons/Share';
 
 type Props = {
   product: Product;
@@ -14,19 +17,19 @@ export function PDPHeader({ product: { category, title, rating, id } }: Props) {
     <Box bg="gray.100" padding="1rem">
       <Container>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
-          <Flex fontSize={'sm'} as={UnorderedList} gap={'2'} listStyleType={'none'} m={'0'}>
-            <ListItem whiteSpace={'nowrap'}>
-              <Link href="/">Home</Link>
-              <ListIcon w={18} h={18} as={ChevronRightIcon} color="gray.700" ml={'2'} mr={'0'} />
-            </ListItem>
-            <ListItem whiteSpace={'nowrap'} textTransform={'capitalize'}>
-              <Link href={`${category}`}>{category}</Link>
-              <ListIcon w={18} h={18} as={ChevronRightIcon} color="gray.700" ml={'2'} mr={'0'} />
-            </ListItem>
-            <ListItem>
-              <Text noOfLines={1}>{title}</Text>
-            </ListItem>
-          </Flex>
+          <Breadcrumb textTransform={'capitalize'} fontSize={'sm'} separator={<ChevronRightIcon />}>
+            <BreadcrumbItem>
+              <BreadcrumbLink as={Link} href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+              <BreadcrumbLink as={Link} href={`/category/${category}`}>{category}</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem isCurrentPage isLastChild>
+              <BreadcrumbLink href="#">{title}</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
 
           <Button color={'gray'} variant={'ghost'} leftIcon={<ShareIcon w={18} h={18} />}>
             Share

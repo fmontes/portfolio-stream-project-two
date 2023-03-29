@@ -6,6 +6,7 @@ import { slugify } from '@/utils/sluglify';
 
 import { CenteredLabel } from './CenteredLabel';
 import { Categories } from '@/models/Categories';
+import Link from 'next/link';
 
 type Props = {
   categories: Categories[];
@@ -46,6 +47,8 @@ export function HomeHeroCategories({ categories }: Props) {
         // TODO: Fix the image size crop issue
         return (
           <GridItem
+            as={Link}
+            href={`/category/${cat}`}
             fontSize={{
               base: '0.85rem',
               md: '1rem',

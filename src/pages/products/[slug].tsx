@@ -4,9 +4,6 @@ import { slugify } from '@/utils/sluglify';
 import {
   AspectRatio,
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Button,
   Container,
   Divider,
@@ -33,8 +30,6 @@ import logo_stripe from '/public/logo_stripe.png';
 import logo_visa from '/public/logo_visa.png';
 import { ProductsGrid } from '@/components/ProductsGrid';
 import { Rating } from '@/components/Rating';
-import { ShareIcon } from '@/icons/Share';
-import { ChevronRightIcon } from '@chakra-ui/icons';
 
 type Props = {
   product: ProductModel;
@@ -60,9 +55,9 @@ export default function Product({ product, relatedProducts }: Props) {
 
   return (
     <>
-      <HeaderSecondary category={category} breadcrumb={[
+      <HeaderSecondary breadcrumb={[
         {
-          href: `/category/${slugify(category)}`,
+          href: `/category/${category}`,
           text: category,
         },
         {

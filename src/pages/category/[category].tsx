@@ -12,10 +12,14 @@ type Props = {
 export default function Category({ products, category }: Props) {
   return (
     <>
-      <HeaderSecondary breadcrumb={[{
-        href: '/',
-        text: category
-      }]} />
+      <HeaderSecondary
+        breadcrumb={[
+          {
+            href: '/',
+            text: category,
+          },
+        ]}
+      />
       <Container mt={'3rem'}>
         <ProductsGrid products={products} />
       </Container>
@@ -28,10 +32,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const url = `https://fakestoreapi.com/products/category/${category}`;
   const products = await fetch(url).then((res) => res.json());
 
+  if (!products.length) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       products,
-      category
+      category,
     },
   };
 };

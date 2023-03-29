@@ -35,7 +35,6 @@ export function HeaderSecondary({ children, breadcrumb }: Props) {
             </BreadcrumbItem>
 
             {breadcrumb.map(({ text, href }, index) => {
-              console.log({href});
               return (
                 <BreadcrumbItem key={index}>
                   <BreadcrumbLink as={Link} href={href}>

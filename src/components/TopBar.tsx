@@ -2,6 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Box, Container, Flex } from '@chakra-ui/react';
 
+import { SocialIcons } from '@/components/SocialIcons';
+
+
 export function TopBar() {
   return (
     <Box bg="black" w="100%" p={2}>
@@ -20,20 +23,7 @@ export function TopBar() {
           </Flex>
         </Flex>
 
-        <Flex gap="1rem">
-          <Link href="#">
-            <Image src="/ico-small-fb.svg" width={24} height="24" alt="" />
-          </Link>
-          <Link href="#">
-            <Image src="/ico-small-tw.svg" width={24} height="24" alt="" />
-          </Link>
-          <Link href="#">
-            <Image src="/ico-small-ig.svg" width={24} height="24" alt="" />
-          </Link>
-          <Link href="#">
-            <Image src="/ico-small-pin.svg" width={24} height="24" alt="" />
-          </Link>
-        </Flex>
+        <SocialIcons />
       </Container>
     </Box>
   );

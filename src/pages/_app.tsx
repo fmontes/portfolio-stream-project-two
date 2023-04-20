@@ -43,6 +43,12 @@ export const buttonTheme = defineStyleConfig({
     danger: {
       backgroundColor: 'red.500',
     },
+    outline: {
+      backgroundColor: 'transparent',
+      border: '1px solid',
+      color: 'white',
+      padding: '0 1.5rem'
+    }
   },
 });
 
@@ -60,6 +66,7 @@ import '@fontsource/spartan/400.css';
 import '@fontsource/spartan/700.css';
 import { TopBar } from '@/components/TopBar';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 const theme = extendTheme({
   colors: {
@@ -98,6 +105,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Header />
       </Box>
       <Component {...pageProps} />
+      <Footer />
     </ChakraProvider>
   );
 }

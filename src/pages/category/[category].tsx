@@ -28,6 +28,7 @@ export default function Category({ products, category }: Props) {
 
   function onFilterSelected(e: ChangeEvent<HTMLSelectElement>) {
     const [min, max] = e.target.value.split('-');
+
     if (min || max) {
       const filtered = products.filter((p) => p.price >= parseFloat(min) && p.price <= parseFloat(max));
 
